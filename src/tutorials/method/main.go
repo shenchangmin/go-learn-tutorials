@@ -33,7 +33,7 @@ func (b Box) Volume() float64 {
 }
 
 // SetColor 把Box的颜色改为c
-func (b Box) SetColor(c Color) {
+func (b *Box) SetColor(c Color) {
 	b.color = c
 }
 
