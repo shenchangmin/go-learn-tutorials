@@ -27,17 +27,17 @@ type Box struct {
 // BoxList a slice of boxes
 type BoxList []Box
 
-// Volume 盒子的体积
+// Volume 定义了接收者为Box，返回Box的容量
 func (b Box) Volume() float64 {
 	return b.width * b.height * b.depth
 }
 
-// SetColor 设置盒子的颜色
+// SetColor 把Box的颜色改为c
 func (b Box) SetColor(c Color) {
 	b.color = c
 }
 
-// BiggestColor 体积最大的盒子的颜色
+// BiggestColor 定在在BoxList上面，返回list里面容量最大的颜色
 func (bl BoxList) BiggestColor() Color {
 	v := 0.00
 	k := Color(WHITE)
@@ -50,7 +50,7 @@ func (bl BoxList) BiggestColor() Color {
 	return k
 }
 
-// PaintItBlack 将盒子颜色设置成黑色
+// PaintItBlack 把BoxList里面所有Box的颜色全部变成黑色
 func (bl BoxList) PaintItBlack() {
 	for i := range bl {
 		bl[i].SetColor(BLACK)
