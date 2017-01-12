@@ -42,6 +42,38 @@ func (h *Human) Guzzle(beerStein string) {
 func (e *Employee) SayHi() {
 	fmt.Printf("Hi,I am %s,I work at %s.Call me on %s\n", e.name, e.company, e.phone)
 }
+
+//BorrowMoney Student实现BorrowMoney方法
+func (s *Student) BorrowMoney(amount float32) {
+	s.loan += amount // (again and again and...)
+}
+
+//SpendSalary Employee实现SpendSalary方法
+func (e *Employee) SpendSalary(amount float32) {
+	e.money -= amount // More vodka please!!! Get me through the day!
+}
+
+//Men 定义interface
+type Men interface {
+	SayHi()
+	Sing(lyrics string)
+	Guzzle(beerStein string)
+}
+
+// YoungChap 年轻人活动
+type YoungChap interface {
+	SayHi()
+	Sing(song string)
+	BorrowMoney(amount float32)
+}
+
+// ElderlyGent 老年人活动
+type ElderlyGent interface {
+	SayHi()
+	Sing(song string)
+	SpendSalary(amount float32)
+}
+
 func main() {
 
 }
