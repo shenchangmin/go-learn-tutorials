@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strconv"
 )
 
@@ -11,6 +12,12 @@ type List []Element
 type Person struct {
 	name string
 	age  int
+}
+
+type Interface interface {
+	sort.Interface      //嵌入字段sort.Interface
+	Push(x interface{}) //a Push method to push elements into the heap
+	Pop() interface{}   //a Pop elements that pops elements from the heap
 }
 
 //打印
